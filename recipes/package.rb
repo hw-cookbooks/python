@@ -39,5 +39,6 @@ end
 python_pkgs.each do |pkg|
   package pkg do
     action :install
+    notifies :reload, resources(:ohai => "python"), :immediately
   end
 end

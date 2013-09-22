@@ -55,4 +55,5 @@ bash "build-and-install-python" do
       "CFLAGS" => "-I#{node['python']['prefix_dir']} -I/usr/lib"
   }) if platform?("ubuntu") && node['platform_version'].to_f >= 12.04
   not_if { ::File.exists?(install_path) }
+  notifies :reload, resources(:ohai => "python"), :immediately
 end
