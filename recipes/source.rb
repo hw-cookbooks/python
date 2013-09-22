@@ -18,6 +18,10 @@
 # limitations under the License.
 #
 
+ohai "python" do
+  action :nothing
+end
+
 include_recipe "build-essential"
 
 configure_options = node['python']['configure_options'].join(" ")

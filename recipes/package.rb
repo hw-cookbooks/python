@@ -18,6 +18,10 @@
 # limitations under the License.
 #
 
+ohai "python" do
+  action :nothing
+end
+
 major_version = node['platform_version'].split('.').first.to_i
 
 # COOK-1016 Handle RHEL/CentOS namings of python packages, by installing EPEL
